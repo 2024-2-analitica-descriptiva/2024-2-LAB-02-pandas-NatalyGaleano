@@ -21,3 +21,20 @@ def pregunta_03():
     Name: count, dtype: int64
 
     """
+    import pandas as pd
+
+
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t",)
+
+    df=pd.DataFrame(df)
+    
+    
+
+    result= df["c1"].value_counts()
+
+    result_ordenado = result.sort_index()
+
+    return (result_ordenado)
+
+print(pregunta_03())
+

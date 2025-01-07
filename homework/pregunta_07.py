@@ -20,3 +20,15 @@ def pregunta_07():
     E    67
     Name: c2, dtype: int64
     """
+   
+    import pandas as pd
+
+
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t",)
+    sumna= df.groupby('c1')['c2'].sum()
+
+    promedio_ordenado = sumna.sort_index()
+
+    return (promedio_ordenado)
+
+print(pregunta_07())

@@ -20,3 +20,19 @@ def pregunta_04():
     E    4.785714
     Name: c2, dtype: float64
     """
+    import pandas as pd
+
+
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t",)
+
+    
+    promedio= df.groupby('c1')['c2'].mean()
+
+    promedio_ordenado = promedio.sort_index()
+
+    promedio_ordenado.index = promedio_ordenado.index.astype(str)
+
+    return (promedio_ordenado)
+
+print(pregunta_04())
+

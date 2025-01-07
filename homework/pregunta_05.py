@@ -20,3 +20,16 @@ def pregunta_05():
     E    9
     Name: c2, dtype: int64
     """
+    
+    import pandas as pd
+
+
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t",)
+    promedio= df.groupby('c1')['c2'].max()
+
+    promedio_ordenado = promedio.sort_index()
+
+    return (promedio_ordenado)
+
+print(pregunta_05())
+

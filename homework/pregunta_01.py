@@ -14,3 +14,13 @@ def pregunta_01():
     40
 
     """
+import pandas as pd
+
+def pregunta_01():
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
+    result = len(df)
+    
+    return result
+
+print(pregunta_01())
+
